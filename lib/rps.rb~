@@ -1,0 +1,34 @@
+class RockPaperScissorsGame
+  attr_accessor :jugadas, :ganador
+  def initialize(tirada)
+    @pieces = %w[piedra papel tijeras]
+    @beats = {
+      'piedra' => 'papel',
+      'papel' => 'tijeras',
+      'tijeras' => 'piedra',
+    }
+    @jugadas = { "humano" => "#{tirada}", "computador" => "#{@pieces.sample}" }
+    @ganador = ""
+    play
+  end
+ 
+  def play
+   print "\nEscoge tu jugada: #@pieces? "
+   if answer == (@pieces[0])||(@pieces[1])||(@pieces[2])
+      print "Tu eleccion: #{h}, Computadora: #{c} => "
+      if @jugadas["humano"] == @jugadas["computador"]
+        puts "draw"
+	@ganador = "empate"
+      elsif @jugadas["humano"] == @beats[@jugadas["computador"]]
+        puts "Ganas a la computadora!"
+	@ganador = "humano"
+      else
+        puts "Perdiste"
+	@ganador = "computador"
+      end
+   elsif
+      puts "Jugada invalida, prueba otra vez"
+   end
+   end
+end
+ 
