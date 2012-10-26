@@ -10,6 +10,10 @@ describe PiedraPapelTijeras do
    end
    
    it "Debe existir una tirada para la maquina" do
-      @ppt.respond_to?("jugadahumano").should == TRUE
+      @ppt.respond_to?("jugadamaquina").should == TRUE
+   end
+   
+   it "Debe existir una lista de tiradas validas" do
+      @ppt.respond_to?("tiradas").should == TRUE
    end
 end

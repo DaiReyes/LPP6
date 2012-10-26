@@ -12,4 +12,12 @@ describe PiedraPapelTijeras do
    it "Debe existir una tirada para la maquina" do
       @ppt.respond_to?("jugadamaquina").should == TRUE
    end
+   
+   it "Debe existir una lista de tiradas validas" do
+      @ppt.respond_to?("tiradas").should == TRUE
+   end
+   
+   it "Debe existir una lista de jugadas posibles y quien gana" do
+      @ppt.respond_to?("reglas").should == TRUE
+   end
 end
